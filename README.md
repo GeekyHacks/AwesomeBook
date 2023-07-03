@@ -1,4 +1,4 @@
-# Microverse_HTML_CSS_JS-Template
+# Awesome books
 
 <a name="readme-top"></a>
 
@@ -58,7 +58,7 @@ To get a local copy up and running, follow these steps:
 
 - Open your Terminal in your VSCode.
 - Navigate to the desired directory[folder] to which you want to clone the repository to
-- [Copy & Paste] git clone you find in the code button https://github.com/GeekyHacks/Personal-Portfolio-Microverse.git
+- [Copy & Paste] git clone you find in the code button https://github.com/GeekyHacks/AwesomeBook.git
 
 ### Prerequisites
 
@@ -72,13 +72,13 @@ In order to run this project you need:
 
 Clone this repository to your desired folder:
 
-- git clone https://github.com/GeekyHacks/Personal-Portfolio-Microverse.git
+- git clone https://github.com/GeekyHacks/AwesomeBook.git
 
 Example commands:
 
 ```sh
   cd my-folder
-  git clone https://github.com/GeekyHacks/Personal-Portfolio-Microverse.git
+  git clone https://github.com/GeekyHacks/AwesomeBook.git
 
 ```
 
@@ -119,7 +119,7 @@ Must-Install-Project-with-the-Following-Programmes:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/GeekyHacks/My-Personal-Portfolio/issues).
+Feel free to check the [issues page](https://github.com/GeekyHacks/AwesomeBook/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -154,6 +154,6 @@ Can I contribute to this project?\*\*
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](https://github.com/GeekyHacks/Personal-Portfolio-Microverse/blob/c94c940b573e85b888d2d3da699284214552018b/MIT.md) licensed.
+This project is [MIT](LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
