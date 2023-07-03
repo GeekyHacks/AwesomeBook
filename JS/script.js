@@ -1,13 +1,32 @@
-const btnColor = document.querySelector('test');
-const backgrod = document.getElementById('backgrod');
+const container = document.getElementById('container');
+const addBtn = document.getElementById('btn');
 
-function chBackcolor() {
-  backgrod.style.backgroundColor = 'red';
-}
-function chcolor() {
-  backgrod.style.backgroundColor = '';
-}
+let bookCollection = JSON.parse(localStorage.getItem('bookCollection')) || [];
 
-btnColor.addEventListener('click', chBackcolor());
+const removeBook = (book) => {
+  bookCollection = bookCollection.filter((b) => b !== book);
+  localStorage.setItem('bookCollection', JSON.stringify(bookCollection));
+};
+const displayBooks = (container) => {
+  container.innerHTML = '';
+  bookCollection.forEach((book) => {
+    const newBook = document.createElement('div');
+    newBook.classList.add('newBook');
+    newBook.innerHTML = `<p>${book.title}</p>
+                          <p>${book.author}</p>
+                          <button class="remove">Remove</button>`;
+    container.appendChild(newBook);
 
-btnColor.addEventListener('click', chcolor());
+    const removeBtn = newBook.querySelector('.remove');
+    removeBtn.addEventListener('click', () => {
+      removeBook(book);
+      newBook.remove();
+    });
+  });
+};
+
+const addBook = (title, author) => {
+  const newBook = { title, author };
+  bookCollection.push(newBook);
+  localStorage.setItem('bookCollection', JSON.stringify(bookCollection));
+};
