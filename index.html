@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
     <title>Linter Tests</title>
-</head>
-<body>
-    <div id="backgrod" class="backgrod">
-
-        <button id="test" onclick="chBackcolor()">Test</button>
-        <button id="test1" onclick="chcolor()">Test1</button>
-
-    </div>
-   
-    <script src="script.js"></script>
-</body>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="navBar">
+          <h1>Awesome Books</h1>
+          <a href="#">List</a><a href="#">Add Book</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="formContainer">
+        <div id="container"></div>
+        <form action="" class="bookForm">
+          <input id="title" type="text" placeholder="Title" />
+          <input id="author" type="text" placeholder="Author" />
+          <button class="button" id="btn" type="submit">Add</button>
+        </form>
+      </div>
+    </main>
+    <script src="./JS/script.js"></script>
+  </body>
 </html>
