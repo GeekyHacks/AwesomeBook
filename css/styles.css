@@ -1,0 +1,63 @@
+* {
+  text-decoration: none !important;
+  box-sizing: border-box;
+  outline: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+}
+
+a {
+  color: #fff;
+}
+
+#backgrod {
+  width: 80vw;
+  height: 50vh;
+  background: rebeccapurple;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+}
+
+.backgrod {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#test #test1 {
+  padding: 5%;
+  font-size: larger;
+  font-weight: 800;
+  color: rgb(35, 161, 161);
+}
+
+.bookForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.button {
+  transition: all 0.5s;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #DCDCDC;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 107%;
+  letter-spacing: 0.001em;
+  word-spacing: normal;
+  transition-duration: 0.4s;
+  padding: 1rem;
+  /* default media Query screen sizes */
+}
+
+/*# sourceMappingURL=styles.css.map */

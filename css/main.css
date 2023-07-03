@@ -1,0 +1,15 @@
+* {
+  text-decoration: none !important;
+  box-sizing: border-box;
+  outline: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+}
+
+a {
+  color: #fff;
+}
+
+/*# sourceMappingURL=main.css.map */

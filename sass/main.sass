@@ -1,0 +1,41 @@
+$InterFont: "Inter", sans-serif
+$primaryColor: #fff
+*
+    text-decoration: none !important
+    box-sizing: border-box
+    outline: none
+    // background: none repeat scroll 0 0 transparent
+    // border: 0
+    // border-spacing: 0
+    list-style-type: none
+    margin: 0
+    padding: 0
+    -webkit-appearance: none
+a
+    color: $primaryColor
+// mixings
+
+@mixin columnFlex
+    display: flex
+    flex-direction: column
+@mixin rowFlex
+    display: flex
+    flex-direction: row
+@mixin button
+    transition: all 0.5s
+    cursor: pointer
+    background: $primaryColor
+    border: 1px solid #DCDCDC
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.25)
+    border-radius: 4px
+    font-family: $InterFont
+    font-weight: 500
+    font-size: 107%
+    letter-spacing: 0.001em
+    word-spacing: normal
+    transition-duration: 0.4s
+    padding: 1rem
+@mixin twoThreeGrid
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-template-rows: 1fr 1fr 1fr
