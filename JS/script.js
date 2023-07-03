@@ -34,7 +34,6 @@ const addBook = (title, author) => {
 
 addBtn.addEventListener('click', (event) => {
   event.preventDefault();
-  console.log('sdsdsdsd');
   const titleInput = document.querySelector('#title');
   const authorInput = document.querySelector('#author');
   const title = titleInput.value;
