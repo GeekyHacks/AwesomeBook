@@ -10,20 +10,22 @@
   <body>
     <header>
       <nav>
-        <h1>Awesome Books</h1>
-        <a href="#">List</a><a href="#">Add Book</a>
+        <div class="navBar">
+          <h1>Awesome Books</h1>
+          <a href="#">List</a><a href="#">Add Book</a>
+        </div>
       </nav>
     </header>
     <main>
-      <form action="" class="bookForm">
+      <div class="formContainer">
         <div id="container"></div>
-    <label for="">Remove</label> 
-    <input type="text" placeholder="Title">
-    <input type="text" placeholder="Author">
-    <button class="button" id="btn">Add</button>
-
-    </form>
+        <form action="" class="bookForm">
+          <input id="title" type="text" placeholder="Title" />
+          <input id="author" type="text" placeholder="Author" />
+          <button class="button" id="btn" type="submit">Add</button>
+        </form>
+      </div>
     </main>
-    <script src="script.js"></script>
+    <script src="./JS/script.js"></script>
   </body>
 </html>

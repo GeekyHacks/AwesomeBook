@@ -14,7 +14,8 @@ const displayBooks = (container) => {
     newBook.classList.add('newBook');
     newBook.innerHTML = `<p>${book.title}</p>
                           <p>${book.author}</p>
-                          <button class="remove">Remove</button>`;
+                          <button class="remove">Remove</button>
+                          <span class="hline"></span>`;
     container.appendChild(newBook);
 
     const removeBtn = newBook.querySelector('.remove');
@@ -24,9 +25,24 @@ const displayBooks = (container) => {
     });
   });
 };
-
+displayBooks(container);
 const addBook = (title, author) => {
   const newBook = { title, author };
   bookCollection.push(newBook);
   localStorage.setItem('bookCollection', JSON.stringify(bookCollection));
 };
+
+addBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  console.log('sdsdsdsd');
+  const titleInput = document.querySelector('#title');
+  const authorInput = document.querySelector('#author');
+  const title = titleInput.value;
+  const author = authorInput.value;
+
+  addBook(title, author);
+  displayBooks(container);
+
+  titleInput.value = '';
+  authorInput.value = '';
+});

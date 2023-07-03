@@ -1,32 +1,56 @@
 @import main
 
-#backgrod
-    width: 80vw
-    height: 50vh
-    background: rebeccapurple
-    justify-content: center
-    justify-items: center
-    align-content: center
+.navBar
+    @include rowFlex
+    gap: 2rem
+    justify-content: space-evenly
     align-items: center
-
-.backgrod
-    display: flex
-    flex-direction: row
-    justify-content: center
-
-#test #test1
-    padding: 5%
-    font-size: larger
-    font-weight: 800
-    color: rgb(35, 161, 161)
-.bookForm
+    h1
+        align-self: flex-start
+.formContainer
     @include columnFlex
     justify-content: center
     align-items: center
-    gap: .3rem
+    margin-top: 2rem
+#container
+    @include columnFlex
+    justify-content: center
+    align-items: center
+    margin-top: 2rem
+    background: #f2f2f2
+    color: $primaryColor
+    border: 1.5px solid $primaryColor
+    padding: .3rem
+    gap: .5rem
+.bookForm
+    margin-top: 1rem
+    @include columnFlex
+    justify-content: center
+    align-items: center
+    gap: .5rem
+
+input
+    padding: .4rem
+    border: 1px solid $primaryColor
+    border-radius: 3px
 .button
     @include button
-
+    align-self: flex-start
+.newBook
+    @include columnFlex
+    border: 1.5px solid $primaryColor
+    border-radius: 4px
+    padding: .2rem
+    // justify-content: flex-start
+.remove
+    @include button
+    align-self: flex-start
+.hline
+    margin-top: .3rem
+    height: 1px
+    width: 250px
+    color: $primaryColor
+    border: 1.5px solid $primaryColor
     /* default media Query screen sizes
 // mobile
 // @media (max-width: 767px)

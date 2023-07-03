@@ -1,5 +1,5 @@
 $InterFont: "Inter", sans-serif
-$primaryColor: #fff
+$primaryColor: #595959
 *
     text-decoration: none !important
     box-sizing: border-box
@@ -24,17 +24,17 @@ a
 @mixin button
     transition: all 0.5s
     cursor: pointer
-    background: $primaryColor
-    border: 1px solid #DCDCDC
-    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.25)
+    background: #7f7f7f
+    border: 1px solid $primaryColor
+    box-shadow: 2px 2px 4px 0 rgba(59, 59, 59, 0.25)
     border-radius: 4px
     font-family: $InterFont
     font-weight: 500
-    font-size: 107%
+    font-size: 1rem
     letter-spacing: 0.001em
     word-spacing: normal
     transition-duration: 0.4s
-    padding: 1rem
+    padding: .4rem
 @mixin twoThreeGrid
     display: grid
     grid-template-columns: 1fr 1fr
