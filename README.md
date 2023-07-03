@@ -48,7 +48,7 @@ is the library website that allows users to add and remove books from the list. 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](deployed url link)
+- [Live Demo Link](https://geekyhacks.github.io/AwesomeBook/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
