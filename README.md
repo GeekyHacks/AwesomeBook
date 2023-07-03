@@ -6,7 +6,7 @@
   <img src="#"  alt="project">
   <br/>
 
-  <h3><b> Personal Portfolio!</b></h3>
+  <h3><b>Awesome books</b></h3>
 
 </div>
 
@@ -31,12 +31,12 @@
 - [❓ FAQ](#faq)
 - [📝 License](#license)
 
-# 📖 Personal Portfolio! <a name="about-project"></a>
+# 📖 Awesome books <a name="about-project"></a>
 
-**My Personal Portfolio!**
-This is my second project with Microverse using Github professional flow and it's a porfolio website that is built in html & css, it includes my resume, basic information about me and my career, and projects I have worked on.
+**Awesome books**
+is the library website that allows users to add and remove books from the list. There is a page for a list of books and the page where you can add any book into the library. There is also contact details whenever you want to contact us.
 
-## 🛠 Built With <a name="built-with">HTML, CSS</a>
+## 🛠 Built With <a name="built-with">HTML, CSS and JavaScript</a>
 
 ### Key Features <a name="key-features">
 
@@ -98,10 +98,14 @@ Must-Install-Project-with-the-Following-Programmes:
 ## 👥 Authors <a name="authors"></a>
 
 👤 **GeekyHacks**
+    **Bhekisile Jozi**
 
 - GitHub: [Geekyhacks](https://github.com/GeekyHacks)
 - Twitter: [Geekydart](https://twitter.com/GeekyDart)
 - LinkedIn: [Abdullah Nasser](https://www.linkedin.com/in/abdullah-nasser-711625268/)
+
+- GitHub: [@githubhandle](https://github.com/bhekisile)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/bhekisile-jozi-b9823369/)
 
 ## 🔭 Future Features <a name="future-features"></a>
 
