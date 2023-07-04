@@ -5,6 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <title>Linter Tests</title>
   </head>
   <body>
@@ -12,13 +24,16 @@
       <nav>
         <div class="navBar">
           <h1>Awesome Books</h1>
-          <a href="#">List</a><a href="#">Add Book</a>
+          <div><a href="#">List</a><a href="#">Add Book</a></div>
         </div>
       </nav>
     </header>
     <main>
       <div class="formContainer">
+        <h2>All Awesome Books</h2>
         <div id="container"></div>
+        <h2>Add New Book</h2>
+        <span class="hline"></span>
         <form action="" class="bookForm">
           <input id="title" type="text" placeholder="Title" />
           <input id="author" type="text" placeholder="Author" />
