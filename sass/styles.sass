@@ -31,14 +31,22 @@
     gap: .5rem
 
 input
-    padding: .4rem
-    border: 1px solid $primaryColor
+    padding: 0.6rem
+    border: 1px solid #595959
     border-radius: 3px
+    width: 16rem
+    font-family: $InterFont
+    font-weight: 500
+    font-size: 1rem
 .button
     @include button
     align-self: flex-start
+    padding: .6rem
+    width: 4.5rem
+    height: 2.5rem
 .newBook
     @include columnFlex
+    @include globalFont
     border: 1.5px solid $primaryColor
     border-radius: 4px
     padding: .2rem
@@ -46,6 +54,7 @@ input
 .remove
     @include button
     align-self: flex-start
+    padding: .3rem
 .hline
     margin-top: .3rem
     height: 1px

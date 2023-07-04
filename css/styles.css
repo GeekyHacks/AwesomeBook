@@ -53,9 +53,13 @@ a {
 }
 
 input {
-  padding: 0.4rem;
+  padding: 0.6rem;
   border: 1px solid #595959;
   border-radius: 3px;
+  width: 16rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 .button {
@@ -71,13 +75,18 @@ input {
   letter-spacing: 0.001em;
   word-spacing: normal;
   transition-duration: 0.4s;
-  padding: 0.4rem;
   align-self: flex-start;
+  padding: 0.6rem;
+  width: 4.5rem;
+  height: 2.5rem;
 }
 
 .newBook {
   display: flex;
   flex-direction: column;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
   border: 1.5px solid #595959;
   border-radius: 4px;
   padding: 0.2rem;
@@ -96,8 +105,8 @@ input {
   letter-spacing: 0.001em;
   word-spacing: normal;
   transition-duration: 0.4s;
-  padding: 0.4rem;
   align-self: flex-start;
+  padding: 0.3rem;
 }
 
 .hline {

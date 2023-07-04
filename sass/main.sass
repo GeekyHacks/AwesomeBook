@@ -34,8 +34,13 @@ a
     letter-spacing: 0.001em
     word-spacing: normal
     transition-duration: 0.4s
-    padding: .4rem
+
 @mixin twoThreeGrid
     display: grid
     grid-template-columns: 1fr 1fr
     grid-template-rows: 1fr 1fr 1fr
+
+@mixin globalFont
+    font-family: $InterFont
+    font-weight: 500
+    font-size: 1.2rem
