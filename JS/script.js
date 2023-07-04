@@ -28,20 +28,22 @@ const displayBooks = (container) => {
 displayBooks(container);
 const addBook = (title, author) => {
   const newBook = { title, author };
-  bookCollection.push(newBook);
+  bookCollection.unshift(newBook);
+  container.style.display = 'flex';
   localStorage.setItem('bookCollection', JSON.stringify(bookCollection));
 };
 
 addBtn.addEventListener('click', (event) => {
-  event.preventDefault();
   const titleInput = document.querySelector('#title');
   const authorInput = document.querySelector('#author');
   const title = titleInput.value;
   const author = authorInput.value;
 
+  if (title === '' || author === '') {
+    return false;
+  }
   addBook(title, author);
   displayBooks(container);
-
   titleInput.value = '';
   authorInput.value = '';
 });
