@@ -3,7 +3,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <img src="#"  alt="project">
+
   <br/>
 
   <h3><b>Awesome books</b></h3>
@@ -15,8 +15,8 @@
 - [📖 About the Project](#about-project)
 
   - [🛠 Built With](#built-with)
-
-    - [Key Features](#key-features)
+       - [Key Features](#key-features)
+  - [🛠 Tech Stack](#tech-stack)
 
   - [🚀 Live Demo](#live-demo)
 
@@ -37,6 +37,15 @@
 is the library website that allows users to add and remove books from the list. There is a page for a list of books and the page where you can add any book into the library. There is also contact details whenever you want to contact us.
 
 ## 🛠 Built With <a name="built-with">HTML, CSS and JavaScript</a>
+### Tech Stack <a name="tech-stack"></a>
+
+
+  <ul>
+    <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML">HTML</a></li>
+    <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS">CSS</a></li>
+    <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript">JavaScript</a></li>
+  </ul>
+
 
 ### Key Features <a name="key-features">
 
