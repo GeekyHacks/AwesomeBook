@@ -87,9 +87,14 @@ input {
   font-family: "Inter", sans-serif;
   font-weight: 500;
   font-size: 1.2rem;
-  border: 1.5px solid #595959;
+  border: 2px solid #595959;
   border-radius: 4px;
   padding: 0.2rem;
+  gap: 0.2rem;
+}
+
+.newBook > * {
+  border: 1px solid #595959;
 }
 
 .remove {

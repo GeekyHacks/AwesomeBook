@@ -47,10 +47,13 @@ input
 .newBook
     @include columnFlex
     @include globalFont
-    border: 1.5px solid $primaryColor
+    border: 2px solid $primaryColor
     border-radius: 4px
     padding: .2rem
+    gap: .2rem
     // justify-content: flex-start
+.newBook >*
+      border: 1px solid $primaryColor
 .remove
     @include button
     align-self: flex-start
