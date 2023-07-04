@@ -13,13 +13,14 @@
     align-items: center
     margin-top: 2rem
 #container
-    @include columnFlex
+    display: flex
+    flex-direction: column
     justify-content: center
     align-items: center
     margin-top: 2rem
     background: #f2f2f2
     color: $primaryColor
-    border: 1.5px solid $primaryColor
+    // border: 1.5px solid $primaryColor
     padding: .3rem
     gap: .5rem
 .bookForm
@@ -30,21 +31,33 @@
     gap: .5rem
 
 input
-    padding: .4rem
-    border: 1px solid $primaryColor
+    padding: 0.6rem
+    border: 1px solid #595959
     border-radius: 3px
+    width: 16rem
+    font-family: $InterFont
+    font-weight: 500
+    font-size: 1rem
 .button
     @include button
     align-self: flex-start
+    padding: .6rem
+    width: 4.5rem
+    height: 2.5rem
 .newBook
     @include columnFlex
-    border: 1.5px solid $primaryColor
+    @include globalFont
+    border: 2px solid $primaryColor
     border-radius: 4px
     padding: .2rem
+    gap: .2rem
     // justify-content: flex-start
+.newBook >*
+      border: 1px solid $primaryColor
 .remove
     @include button
     align-self: flex-start
+    padding: .3rem
 .hline
     margin-top: .3rem
     height: 1px
