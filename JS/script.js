@@ -41,17 +41,17 @@ const displayBooks = (container) => {
 displayBooks(container);
 
 addBtn.addEventListener('click', (event) => {
-  event.preventDefault();
   const titleInput = document.querySelector('#title');
   const authorInput = document.querySelector('#author');
   const title = titleInput.value;
   const author = authorInput.value;
-  // if (title === '' || author === '') {
-  //   return null;
-  // }
+  if (title === '' || author === '') {
+    return null;
+  }
   Book.addBook(title, author);
   displayBooks(container);
 
   titleInput.value = '';
   authorInput.value = '';
+  return event.preventDefault();
 });
