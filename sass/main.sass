@@ -4,15 +4,13 @@ $primaryColor: #595959
     text-decoration: none !important
     box-sizing: border-box
     outline: none
-    // background: none repeat scroll 0 0 transparent
-    // border: 0
-    // border-spacing: 0
     list-style-type: none
     margin: 0
     padding: 0
-    -webkit-appearance: none
+    appearance: none
 a
     color: $primaryColor
+
 // mixings
 
 @mixin columnFlex
@@ -44,3 +42,22 @@ a
     font-family: $InterFont
     font-weight: 500
     font-size: 1.2rem
+@mixin smlInterH1
+    color: black
+    font-size: 1.875rem
+    font-family: $InterFont
+    line-height: 1.3rem
+    font-weight: 800
+    letter-spacing: -0.0525rem
+@mixin smlInterH2
+    color: black
+    font-size: 1.5rem
+    font-family: $InterFont
+    line-height: 1.1rem
+    font-weight: 700
+    letter-spacing: -0.0225rem
+@mixin smlInterP
+    font-size: 1rem
+    font-family: $InterFont
+    line-height: 1.1rem
+    letter-spacing: -0.0225rem

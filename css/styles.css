@@ -5,7 +5,7 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  -webkit-appearance: none;
+  appearance: none;
 }
 
 a {
@@ -16,11 +16,47 @@ a {
   display: flex;
   flex-direction: row;
   gap: 2rem;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  padding: 0.5rem;
 }
+
 .navBar h1 {
+  color: black;
+  font-size: 1.875rem;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.0525rem;
   align-self: flex-start;
+  margin-left: 3rem;
+}
+
+.navBar div {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  margin-right: 2rem;
+  gap: 3rem;
+}
+
+.navBar div a {
+  color: black;
+  font-size: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.0225rem;
+}
+
+h2 {
+  color: black;
+  font-size: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.0225rem;
+  padding: 0.2rem;
 }
 
 .formContainer {
@@ -36,10 +72,11 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 0.1rem;
   background: #f2f2f2;
   color: #595959;
-  padding: 0.3rem;
+  border-radius: 5px;
+  padding: 0.1rem;
   gap: 0.5rem;
 }
 
@@ -57,7 +94,7 @@ input {
   border: 1px solid #595959;
   border-radius: 3px;
   width: 16rem;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 1rem;
 }
@@ -69,7 +106,7 @@ input {
   border: 1px solid #595959;
   box-shadow: 2px 2px 4px 0 rgba(59, 59, 59, 0.25);
   border-radius: 4px;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 1rem;
   letter-spacing: 0.001em;
@@ -84,17 +121,32 @@ input {
 .newBook {
   display: flex;
   flex-direction: column;
-  font-family: "Inter", sans-serif;
-  font-weight: 500;
-  font-size: 1.2rem;
-  border: 2px solid #595959;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.1rem;
+  letter-spacing: -0.0225rem;
   border-radius: 4px;
   padding: 0.2rem;
   gap: 0.2rem;
+  width: 50vw;
 }
 
 .newBook > * {
   border: 1px solid #595959;
+}
+
+.bookPart {
+  display: flex;
+  flex-direction: row;
+  padding: 0.2rem;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #595959;
+  border-radius: 4px;
+}
+
+.bookPart p span {
+  font-weight: 600;
 }
 
 .remove {
@@ -104,23 +156,24 @@ input {
   border: 1px solid #595959;
   box-shadow: 2px 2px 4px 0 rgba(59, 59, 59, 0.25);
   border-radius: 4px;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 1rem;
   letter-spacing: 0.001em;
   word-spacing: normal;
   transition-duration: 0.4s;
-  align-self: flex-start;
+  align-self: flex-end;
   padding: 0.3rem;
 }
 
 .hline {
-  margin-top: 0.3rem;
+  margin-top: 0.2rem;
   height: 1px;
   width: 250px;
   color: #595959;
   border: 1.5px solid #595959;
-  /* default media Query screen sizes */
 }
+
+/* default media Query screen sizes */
 
 /*# sourceMappingURL=styles.css.map */

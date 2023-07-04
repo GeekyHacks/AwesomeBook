@@ -3,10 +3,25 @@
 .navBar
     @include rowFlex
     gap: 2rem
-    justify-content: space-evenly
+    justify-content: space-between
     align-items: center
+    padding: .5rem
     h1
+        @include smlInterH1
         align-self: flex-start
+        margin-left: 3rem
+    div
+        @include rowFlex
+        align-self: flex-end
+        margin-right: 2rem
+        gap: 3rem
+        a
+            @include smlInterH2
+
+h2
+    @include smlInterH2
+    padding: .2rem
+
 .formContainer
     @include columnFlex
     justify-content: center
@@ -17,11 +32,12 @@
     flex-direction: column
     justify-content: center
     align-items: center
-    margin-top: 2rem
+    margin-top: .1rem
     background: #f2f2f2
     color: $primaryColor
+    border-radius: 5px
     // border: 1.5px solid $primaryColor
-    padding: .3rem
+    padding: .1rem
     gap: .5rem
 .bookForm
     margin-top: 1rem
@@ -46,25 +62,39 @@ input
     height: 2.5rem
 .newBook
     @include columnFlex
-    @include globalFont
-    border: 2px solid $primaryColor
+    @include smlInterP
     border-radius: 4px
     padding: .2rem
     gap: .2rem
+    width: 50vw
+
     // justify-content: flex-start
 .newBook >*
-      border: 1px solid $primaryColor
+    border: 1px solid $primaryColor
+.bookPart
+    @include rowFlex
+    padding: .2rem
+    justify-content: space-between
+    align-items: center
+    border: 2px solid $primaryColor
+    border-radius: 4px
+    p
+        span
+            font-weight: 600
+
 .remove
     @include button
-    align-self: flex-start
+    align-self: flex-end
     padding: .3rem
+
 .hline
-    margin-top: .3rem
+    margin-top: .2rem
     height: 1px
     width: 250px
     color: $primaryColor
     border: 1.5px solid $primaryColor
-    /* default media Query screen sizes
+
+/* default media Query screen sizes
 // mobile
 // @media (max-width: 767px)
 
