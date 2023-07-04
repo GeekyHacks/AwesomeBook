@@ -11,7 +11,7 @@ class Book {
 
   static addBook(title, author) {
     const newBook = new Book(title, author);
-    bookCollection.push(newBook);
+    bookCollection.unshift(newBook);
     localStorage.setItem('bookCollection', JSON.stringify(bookCollection));
   }
 
@@ -46,9 +46,9 @@ addBtn.addEventListener('click', (event) => {
   const authorInput = document.querySelector('#author');
   const title = titleInput.value;
   const author = authorInput.value;
-  if (title === '' || author === '') {
-    return false;
-  }
+  // if (title === '' || author === '') {
+  //   return null;
+  // }
   Book.addBook(title, author);
   displayBooks(container);
 
