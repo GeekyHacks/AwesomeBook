@@ -21,24 +21,30 @@ class Book {
   }
 }
 
-const displayBooks = (container) => {
-  container.innerHTML = '';
-  bookCollection.forEach((book) => {
-    const newBook = document.createElement('div');
-    newBook.classList.add('newBook');
-    newBook.innerHTML = `<div class="bookPart"><p>${book.title} <span>by</span> ${book.author} </p>
-    //                           <button class="remove">Remove</button></div>`;
-    container.appendChild(newBook);
+class ShowBooks {
+  constructor(container) {
+    this.container = container;
+  }
 
-    const removeBtn = newBook.querySelector('.remove');
-    removeBtn.addEventListener('click', () => {
-      Book.removeBook(book);
-      newBook.remove();
+  static displayBooks(container) {
+    container.innerHTML = '';
+    bookCollection.forEach((book) => {
+      const newBook = document.createElement('div');
+      newBook.classList.add('newBook');
+      newBook.innerHTML = `<div class="bookPart"><p>${book.title} <span>by</span> ${book.author} </p>
+      //                           <button class="remove">Remove</button></div>`;
+      container.appendChild(newBook);
+
+      const removeBtn = newBook.querySelector('.remove');
+      removeBtn.addEventListener('click', () => {
+        Book.removeBook(book);
+        newBook.remove();
+      });
     });
-  });
-};
+  }
+}
 
-displayBooks(container);
+ShowBooks.displayBooks(container);
 
 addBtn.addEventListener('click', (event) => {
   const titleInput = document.querySelector('#title');
@@ -49,9 +55,10 @@ addBtn.addEventListener('click', (event) => {
     return null;
   }
   Book.addBook(title, author);
-  displayBooks(container);
+  ShowBooks.displayBooks(container);
 
   titleInput.value = '';
   authorInput.value = '';
   return event.preventDefault();
 });
+
