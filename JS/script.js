@@ -1,6 +1,12 @@
+const body = document.querySelector('main');
+const mainContainer = document.querySelector('.formContainer');
 const container = document.querySelector('#container');
-const addBtn = document.querySelector('#btn');
-
+const date = document.querySelector('.dayDate');
+const navBar = document.querySelector('nav');
+const contactPage = document.querySelector('#contactUs');
+const contactBtn = document.querySelector('#contactBtn');
+const addBookSection = document.querySelector('#addBooks');
+const addNewBookBtn = document.querySelector('#addNewBook');
 let bookCollection = JSON.parse(localStorage.getItem('bookCollection')) || [];
 
 class Book {
@@ -32,7 +38,7 @@ class ShowBooks {
       const newBook = document.createElement('div');
       newBook.classList.add('newBook');
       newBook.innerHTML = `<div class="bookPart"><p>${book.title} <span>by</span> ${book.author} </p>
-      //                           <button class="remove">Remove</button></div>`;
+                               </div><button class="remove">Remove</button>`;
       container.appendChild(newBook);
 
       const removeBtn = newBook.querySelector('.remove');
@@ -44,21 +50,72 @@ class ShowBooks {
   }
 }
 
-ShowBooks.displayBooks(container);
+// Single page app
 
-addBtn.addEventListener('click', (event) => {
-  const titleInput = document.querySelector('#title');
-  const authorInput = document.querySelector('#author');
-  const title = titleInput.value;
-  const author = authorInput.value;
-  if (title === '' || author === '') {
-    return null;
-  }
-  Book.addBook(title, author);
+function displayDate() {
+  const stringDate = new Date().toUTCString();
+  date.innerHTML = stringDate;
+  navBar.appendChild(date);
+}
+
+function onLoad() {
+  displayDate();
+  container.classList.add('hide');
+  contactPage.classList.add('hide');
+  addBookSection.classList.add('hide');
+}
+// List page
+function listpage() {
+  container.classList.remove('hide');
+  contactPage.classList.add('hide');
+  addBookSection.classList.add('hide');
   ShowBooks.displayBooks(container);
+}
 
-  titleInput.value = '';
-  authorInput.value = '';
-  return event.preventDefault();
-});
+// addnew page
+function addBook() {
+  addBookSection.classList.remove('hide');
+  contactPage.classList.add('hide');
+  container.classList.add('hide');
+  addBookSection.innerHTML = `
+  <h2 class="hline">Add New Book</h2>
+   
+    <form action="" class="bookForm">
+      <input id="title" type="text" placeholder="Title" />
+     <input id="author" type="text" placeholder="Author" />
+     <button class="button" id="btn" type="submit">Add</button>
+    </form>`;
+  const addBtn = document.querySelector('#btn');
 
+  addBtn.addEventListener('click', (event) => {
+    const titleInput = document.querySelector('#title');
+    const authorInput = document.querySelector('#author');
+    const title = titleInput.value;
+    const author = authorInput.value;
+    if (title === '' || author === '') {
+      return null;
+    }
+    Book.addBook(title, author);
+    ShowBooks.displayBooks(container);
+
+    titleInput.value = '';
+    authorInput.value = '';
+    return event.preventDefault();
+  });
+  // mainContainer.appendChild(container);
+}
+
+// contact page
+
+function contact() {
+  contactPage.classList.remove('hide');
+  container.classList.add('hide');
+  addBookSection.classList.add('hide');
+  contactPage.innerHTML = `<h2>Contact Information</h2>
+  <h3>Reach out to us whenever you have any question or wanna say 'Hello!'</h3>
+  <ul id="contactList">
+    <li>Email:geekyhacks22@gmail.com</li>
+    <li>Phone:0032112321</li>
+    <li>Adress:Zaid Street, Sana'a, Yemen</li>
+  </ul>`;
+}

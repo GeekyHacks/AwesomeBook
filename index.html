@@ -17,30 +17,39 @@
       href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <title>Linter Tests</title>
+    <title>Awesome Books</title>
   </head>
-  <body>
+  <body onload="onLoad();">
     <header>
       <nav>
         <div class="navBar">
-          <h1>Awesome Books</h1>
-          <div><a href="#">List</a><a href="#">Add Book</a></div>
+          <h2>Awesome Books</h2>
+          <div>
+            <a onclick="listpage()" href="#">List</a> <span>|</span>
+            <a onclick="addBook();" id="addNewBook" href="#">Add New</a><span>|</span
+            ><a onclick="contact();" id="contactBtn" href="#">Contact</a>
+          </div>
         </div>
+        <p class="dayDate"></p>
       </nav>
     </header>
     <main>
-      <div class="formContainer">
-        <h2>All Awesome Books</h2>
+      <h1>Welcome to Awesome Books</h1>
+     
         <div id="container"></div>
-        <h2>Add New Book</h2>
-        <span class="hline"></span>
-        <form action="" class="bookForm">
-          <input id="title" type="text" placeholder="Title" />
-          <input id="author" type="text" placeholder="Author" />
-          <button class="button" id="btn" type="submit">Add</button>
-        </form>
-      </div>
+        <div id="addBooks"></div>
+  
+      <div id="contactUs"></div>
     </main>
+
+    <footer>
+      <h3 class="copyRights">
+        Copy rights reserved to <a href="https://github.com/GeekyHacks">geekyhacks</a> &<a
+          href="https://github.com/Bhekisile"
+          >Jozi</a
+        >
+      </h3>
+    </footer>
     <script src="./JS/script.js"></script>
   </body>
 </html>
