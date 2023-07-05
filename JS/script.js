@@ -1,5 +1,3 @@
-const body = document.querySelector('main');
-const mainContainer = document.querySelector('.formContainer');
 const container = document.querySelector('#container');
 const date = document.querySelector('.dayDate');
 const navBar = document.querySelector('nav');
@@ -7,6 +5,7 @@ const contactPage = document.querySelector('#contactUs');
 const contactBtn = document.querySelector('#contactBtn');
 const addBookSection = document.querySelector('#addBooks');
 const addNewBookBtn = document.querySelector('#addNewBook');
+const listBtn = document.querySelector('#listBtn');
 let bookCollection = JSON.parse(localStorage.getItem('bookCollection')) || [];
 
 class Book {
@@ -119,3 +118,12 @@ function contact() {
     <li>Adress:Zaid Street, Sana'a, Yemen</li>
   </ul>`;
 }
+listBtn.addEventListener('click', () => {
+  listpage();
+});
+addNewBookBtn.addEventListener('click', () => {
+  addBook();
+});
+contactBtn.addEventListener('click', () => {
+  contact();
+});

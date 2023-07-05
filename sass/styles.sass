@@ -25,6 +25,7 @@ nav
         gap: 1rem
         a
             @include smlInterH2
+
 .dayDate
     @include smlInterP
     font-weight: 600
@@ -49,14 +50,11 @@ h3
     padding: 3rem
 #container
     @include columnFlex
+    align-self: center
     margin: 0.3rem
-
     justify-content: stretch
-    align-items: stretch
-    justify-items: stretch
-    align-content: stretch
+    align-items: center
     margin-top: .1rem
-    background: #f2f2f2
     color: $primaryColor
     border-radius: 5px
     padding: .1rem
@@ -84,9 +82,11 @@ input
     justify-content: stretch
     align-items: stretch
     @include smlInterP
+    background: #f2f2f2
     border-radius: 4px
     padding: .2rem
     gap: .2rem
+    width: 60vw
 .bookPart
     flex: 5
     @include rowFlex
@@ -129,3 +129,8 @@ input
 
 .hide
     display: none !important
+footer
+    position: absolute
+
+    bottom: 0
+    width: 100%
