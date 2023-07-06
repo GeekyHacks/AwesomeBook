@@ -1,5 +1,5 @@
 const container = document.querySelector('#container');
-const date = document.querySelector('.dayDate');
+const dateLine = document.querySelector('.dayDate');
 const navBar = document.querySelector('nav');
 const contactPage = document.querySelector('#contactUs');
 const contactBtn = document.querySelector('#contactBtn');
@@ -52,10 +52,17 @@ class ShowBooks {
 // Single page app
 
 function displayDate() {
-  const stringDate = new Date().toUTCString();
-  date.innerHTML = stringDate;
-  navBar.appendChild(date);
+  const stringDate = new Date();
+  const date = stringDate.toLocaleDateString();
+  const time = stringDate.toLocaleTimeString();
+  dateLine.innerHTML = `${date} ${time}`;
+  navBar.appendChild(dateLine);
 }
+
+// to update the time
+setInterval(displayDate, 1000);
+
+// to add th sd
 
 function onLoad() {
   displayDate();
