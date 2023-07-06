@@ -43,7 +43,7 @@ const displayBooks = (container) => {
 
 // Single page app
 
-let displayDate = () => {
+const displayDate = () => {
   const stringDate = new Date();
   const date = stringDate.toLocaleDateString('en-us', {
     year: 'numeric',
@@ -59,12 +59,9 @@ let displayDate = () => {
 setInterval(displayDate, 1000);
 
 // List page
-let listpage = () => {
-  return displayBooks(container);
-};
-
+const listpage = () => displayBooks(container);
 // addnew page
-let addBook = () => {
+const addBook = () => {
   container.innerHTML = `
   <h2 class="hline">Add New Book</h2>
    
@@ -122,7 +119,7 @@ let addBook = () => {
 
 // contact page
 
-let contact = () => {
+const contact = () => {
   container.innerHTML = `<h2>Contact Information</h2>
   <h3>Reach out to us whenever you have any question or wanna say 'Hello!'</h3>
   <ul>
@@ -150,4 +147,3 @@ links.forEach((link) => {
     return link;
   });
 });
-
