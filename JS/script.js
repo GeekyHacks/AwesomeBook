@@ -1,12 +1,9 @@
+const main = document.querySelector('main');
 const container = document.querySelector('#container');
 const dateLine = document.querySelector('.dayDate');
 const navBar = document.querySelector('nav');
 const contactPage = document.querySelector('#contactUs');
-const contactBtn = document.querySelector('#contactBtn');
 const addBookSection = document.querySelector('#addBooks');
-const addNewBookBtn = document.querySelector('#addNewBook');
-const listBtn = document.querySelector('#listBtn');
-
 let bookCollection = JSON.parse(localStorage.getItem('bookCollection')) || [];
 
 class Book {
@@ -44,8 +41,6 @@ const displayBooks = (container) => {
   });
 };
 
-displayBooks(container);
-
 // Single page app
 
 function displayDate() {
@@ -55,7 +50,6 @@ function displayDate() {
     month: 'long',
     day: 'numeric',
   });
-  // const date = stringDate.toLocaleDateString();
   const time = stringDate.toLocaleTimeString();
   dateLine.innerHTML = `${date} ${time}`;
   navBar.appendChild(dateLine);
@@ -64,21 +58,13 @@ function displayDate() {
 // to update the time
 setInterval(displayDate, 1000);
 
-// to add th sd
-
-function onLoad() {
-  displayDate();
-  container.classList.add('hide');
-  contactPage.classList.add('hide');
-  addBookSection.classList.add('hide');
-}
-onLoad();
 // List page
 function listpage() {
   container.classList.remove('hide');
   contactPage.classList.add('hide');
   addBookSection.classList.add('hide');
-  displayBooks(container);
+
+  return displayBooks(container);
 }
 
 // addnew page
@@ -90,23 +76,51 @@ function addBook() {
   <h2 class="hline">Add New Book</h2>
    
     <form action="" class="bookForm">
-      <input id="title" type="text" placeholder="Title" />
-     <input id="author" type="text" placeholder="Author" />
+      <input required id="title" type="text" placeholder="Title" />
+     <input required id="author" type="text" placeholder="Author" />
      <button class="button" id="btn" type="submit">Add</button>
     </form>`;
+  main.appendChild(addBookSection);
   const addBtn = document.querySelector('#btn');
+  var titleInput = document.querySelector('#title');
+  var authorInput = document.querySelector('#author');
+  // Declare an data object to store userinput
+  let formData = {
+    Title: '',
+    Author: '',
+  };
+
+  // Declare the userinput as a data and match it with dataobject
+  var formUserInput = (data) => {
+    titleInput.value = data.Title;
+    authorInput.value = data.Author;
+  };
+
+  titleInput.addEventListener('input', () => {
+    formData.Title = titleInput.value;
+    localStorage.setItem('formData', JSON.stringify(formData));
+  });
+
+  authorInput.addEventListener('input', () => {
+    formData.Author = authorInput.value;
+    localStorage.setItem('formData', JSON.stringify(formData));
+  });
+
+  // Store all user input one by one
+  if (localStorage.getItem('formData')) {
+    formData = JSON.parse(localStorage.getItem('formData'));
+    formUserInput(formData);
+  }
 
   addBtn.addEventListener('click', (event) => {
-    const titleInput = document.querySelector('#title');
-    const authorInput = document.querySelector('#author');
     const title = titleInput.value;
     const author = authorInput.value;
     if (title === '' || author === '') {
       return null;
     }
-    Book.addBook(title, author);
-    displayBooks(container);
 
+    Book.addBook(title, author);
+    localStorage.removeItem('formData')
     titleInput.value = '';
     authorInput.value = '';
     return event.preventDefault();
@@ -122,17 +136,65 @@ function contact() {
   contactPage.innerHTML = `<h2>Contact Information</h2>
   <h3>Reach out to us whenever you have any question or wanna say 'Hello!'</h3>
   <ul id="contactList">
-    <li>Email:geekyhacks22@gmail.com</li>
+    <li>Author:geekyhacks22@gmail.com</li>
     <li>Phone:0032112321</li>
     <li>Adress:Zaid Street, Sana'a, Yemen</li>
   </ul>`;
 }
-listBtn.addEventListener('click', () => {
-  listpage();
+
+// the following can be done for links click
+
+const links = document.querySelectorAll('.link'); /// create array of element objects
+links.forEach((link) => {
+  // loop through them
+  link.addEventListener('click', function handleClick() {
+    if (this.id === 'listBtn') {
+      return listpage();
+    }
+    if (this.id === 'addNewBook') {
+      return addBook();
+    }
+    if (this.id === 'contactBtn') {
+      contact();
+    }
+  });
 });
-addNewBookBtn.addEventListener('click', () => {
-  addBook();
-});
-contactBtn.addEventListener('click', () => {
-  contact();
-});
+
+// const titleInput = document.querySelector('#title');
+// const authorInput = document.querySelector('#author');
+// // Declare an data object to store userinput
+// let formData = {
+//   Title: '',
+//   Author: '',
+// };
+
+// // Declare the userinput as a data and match it with dataobject
+// const formUserInput = (data) => {
+//   titleInput.value = data.Title;
+//   authorInput.value = data.Author;
+// };
+
+// // Store all user input one by one
+// if (localStorage.getItem('formData')) {
+//   formData = JSON.parse(localStorage.getItem('formData'));
+//   formUserInput(formData);
+// }
+// titleInput.addEventListener('input', () => {
+//   formData.Title = titleInput.value;
+//   localStorage.setItem('formData', JSON.stringify(formData));
+// });
+
+// authorInput.addEventListener('input', () => {
+//   formData.Author = authorInput.value;
+//   localStorage.setItem('formData', JSON.stringify(formData));
+// });
+
+// /// create array of element objects
+// inputs.forEach((input) => {
+//   // loop through them
+//   input.addEventListener('input', (event) => {
+//     formData.Title = titleInput.value;
+//     formData.Author = authorInput.value;
+//     localStorage.setItem('formData', JSON.stringify(formData));
+//   });
+// });
