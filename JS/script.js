@@ -22,7 +22,7 @@ class Book {
   }
 }
 
-const displayBooks = (container) => {
+displayBooks = (container) => {
   container.innerHTML = '';
   bookCollection.forEach((book) => {
     const newBook = document.createElement('div');
@@ -41,7 +41,7 @@ const displayBooks = (container) => {
 
 // Single page app
 
-const displayDate = () => {
+displayDate = () => {
   const stringDate = new Date();
   const date = stringDate.toLocaleDateString('en-us', {
     year: 'numeric',
@@ -57,9 +57,9 @@ const displayDate = () => {
 setInterval(displayDate, 1000);
 
 // List page
-const listpage = () => displayBooks(container);
+listpage = () => displayBooks(container);
 // addnew page
-const addBook = () => {
+addBook = () => {
   container.innerHTML = `
   <h2 class="hline">Add New Book</h2>
    
@@ -79,7 +79,7 @@ const addBook = () => {
   };
 
   // Declare the userinput as a data and match it with dataobject
-  const formUserInput = (data) => {
+  formUserInput = (data) => {
     titleInput.value = data.Title;
     authorInput.value = data.Author;
   };
@@ -117,7 +117,7 @@ const addBook = () => {
 
 // contact page
 
-const contact = () => {
+contact = () => {
   container.innerHTML = `<h2>Contact Information</h2>
   <h3>Reach out to us whenever you have any question or wanna say 'Hello!'</h3>
   <ul>
