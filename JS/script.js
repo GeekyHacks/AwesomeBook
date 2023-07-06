@@ -53,7 +53,10 @@ class ShowBooks {
 
 function displayDate() {
   const stringDate = new Date();
-  const date = stringDate.toLocaleDateString();
+  const date = stringDate.toLocaleDateString('en-us', {
+    year: 'numeric', month: 'long', day: 'numeric',
+  });
+  // const date = stringDate.toLocaleDateString();
   const time = stringDate.toLocaleTimeString();
   dateLine.innerHTML = `${date} ${time}`;
   navBar.appendChild(dateLine);
@@ -70,6 +73,7 @@ function onLoad() {
   contactPage.classList.add('hide');
   addBookSection.classList.add('hide');
 }
+onLoad();
 // List page
 function listpage() {
   container.classList.remove('hide');
