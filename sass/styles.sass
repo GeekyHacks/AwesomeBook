@@ -1,44 +1,71 @@
 @import main
 
+nav
+    @include columnFlex
+    padding: .2rem
+    gap: .2rem
+    justify-content: center
+h1
+    @include smlInterH1
+    text-align: center
+    padding: 5rem
+    @include transparentText
+
+h2
+    @include smlInterH2
+    padding: .2rem
+h3
+    @include smlInterH3
+
+.copyRights
+    @include smlInterP
+    display: block
+    border: 1.5px solid $primaryColor
+    padding: .5rem
+    margin: .3rem
+    a
+        color: blue
 .navBar
     @include rowFlex
     gap: 2rem
     justify-content: space-between
     align-items: center
+    margin: .3rem
+    border: 2px solid $primaryColor
     padding: .5rem
     h1
         @include smlInterH1
         align-self: flex-start
-        margin-left: 3rem
+        margin-left: 2.5rem
     div
         @include rowFlex
-        align-self: flex-end
-        margin-right: 2rem
-        gap: 3rem
+        align-items: center
+        margin-right: 1.5rem
+        gap: 1rem
         a
             @include smlInterH2
 
-h2
-    @include smlInterH2
-    padding: .2rem
-
-.formContainer
-    @include columnFlex
-    justify-content: center
-    align-items: center
-    margin-top: 2rem
+.dayDate
+    @include smlInterP
+    font-weight: 600
+    align-self: flex-end
+    margin-right: .4rem
 #container
-    display: flex
-    flex-direction: column
-    justify-content: center
+    @include columnFlex
+    align-self: center
+    margin: 0.3rem
+    justify-content: stretch
     align-items: center
     margin-top: .1rem
-    background: #f2f2f2
     color: $primaryColor
     border-radius: 5px
-    // border: 1.5px solid $primaryColor
     padding: .1rem
     gap: .5rem
+    h3
+        margin-top: 3rem
+    ul
+        li
+            @include smlInterP
 .bookForm
     margin-top: 1rem
     @include columnFlex
@@ -50,10 +77,7 @@ input
     padding: 0.6rem
     border: 1px solid #595959
     border-radius: 3px
-    width: 16rem
-    font-family: $InterFont
-    font-weight: 500
-    font-size: 1rem
+    @include smlInterP
 .button
     @include button
     align-self: flex-start
@@ -61,49 +85,37 @@ input
     width: 4.5rem
     height: 2.5rem
 .newBook
-    @include columnFlex
+    @include rowFlex
+    justify-content: stretch
+    align-items: stretch
     @include smlInterP
+    background: #f2f2f2
     border-radius: 4px
     padding: .2rem
     gap: .2rem
-    width: 50vw
-
-    // justify-content: flex-start
-.newBook >*
-    border: 1px solid $primaryColor
+    width: 60vw
 .bookPart
+    flex: 5
     @include rowFlex
     padding: .2rem
     justify-content: space-between
     align-items: center
     border: 2px solid $primaryColor
     border-radius: 4px
-    p
-        span
-            font-weight: 600
-
 .remove
+    flex: 1
     @include button
     align-self: flex-end
     padding: .3rem
 
 .hline
-    margin-top: .2rem
-    height: 1px
-    width: 250px
-    color: $primaryColor
-    border: 1.5px solid $primaryColor
+    border-bottom: 1px solid $primaryColor
+    text-align: center
 
-/* default media Query screen sizes
-// mobile
-// @media (max-width: 767px)
+.hide
+    display: none !important
+footer
+    position: absolute
 
-// small screen
-// @media (min-width: 768px)
-
-// mediam screen
-// @media (min-width: 992px)
-
-// large screen
-// @media (min-width: 1200px)
-// } */
+    bottom: 0
+    width: 100%
