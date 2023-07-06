@@ -6,6 +6,7 @@ const contactBtn = document.querySelector('#contactBtn');
 const addBookSection = document.querySelector('#addBooks');
 const addNewBookBtn = document.querySelector('#addNewBook');
 const listBtn = document.querySelector('#listBtn');
+
 let bookCollection = JSON.parse(localStorage.getItem('bookCollection')) || [];
 
 class Book {
@@ -26,35 +27,33 @@ class Book {
   }
 }
 
-class ShowBooks {
-  constructor(container) {
-    this.container = container;
-  }
+const displayBooks = (container) => {
+  container.innerHTML = '';
+  bookCollection.forEach((book) => {
+    const newBook = document.createElement('div');
+    newBook.classList.add('newBook');
+    newBook.innerHTML = `<div class="bookPart"><p>${book.title} <span>by</span> ${book.author} </p>
+    </div><button class="remove">Remove</button>`;
+    container.appendChild(newBook);
 
-  static displayBooks(container) {
-    container.innerHTML = '';
-    bookCollection.forEach((book) => {
-      const newBook = document.createElement('div');
-      newBook.classList.add('newBook');
-      newBook.innerHTML = `<div class="bookPart"><p>${book.title} <span>by</span> ${book.author} </p>
-                               </div><button class="remove">Remove</button>`;
-      container.appendChild(newBook);
-
-      const removeBtn = newBook.querySelector('.remove');
-      removeBtn.addEventListener('click', () => {
-        Book.removeBook(book);
-        newBook.remove();
-      });
+    const removeBtn = newBook.querySelector('.remove');
+    removeBtn.addEventListener('click', () => {
+      Book.removeBook(book);
+      newBook.remove();
     });
-  }
-}
+  });
+};
+
+displayBooks(container);
 
 // Single page app
 
 function displayDate() {
   const stringDate = new Date();
   const date = stringDate.toLocaleDateString('en-us', {
-    year: 'numeric', month: 'long', day: 'numeric',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
   });
   // const date = stringDate.toLocaleDateString();
   const time = stringDate.toLocaleTimeString();
@@ -79,7 +78,7 @@ function listpage() {
   container.classList.remove('hide');
   contactPage.classList.add('hide');
   addBookSection.classList.add('hide');
-  ShowBooks.displayBooks(container);
+  displayBooks(container);
 }
 
 // addnew page
@@ -106,13 +105,12 @@ function addBook() {
       return null;
     }
     Book.addBook(title, author);
-    ShowBooks.displayBooks(container);
+    displayBooks(container);
 
     titleInput.value = '';
     authorInput.value = '';
     return event.preventDefault();
   });
-  // mainContainer.appendChild(container);
 }
 
 // contact page
