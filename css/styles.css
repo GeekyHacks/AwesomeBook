@@ -19,50 +19,6 @@ nav {
   justify-content: center;
 }
 
-.navBar {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0.3rem;
-  border: 2px solid #595959;
-  padding: 0.5rem;
-}
-.navBar h1 {
-  color: black;
-  font-size: 3rem;
-  font-family: "Inter", sans-serif;
-  font-weight: 800;
-  letter-spacing: -0.0525rem;
-  align-self: flex-start;
-  margin-left: 2.5rem;
-}
-.navBar div {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-right: 1.5rem;
-  gap: 1rem;
-}
-.navBar div a {
-  color: black;
-  font-size: 1.7rem;
-  font-family: "Inter", sans-serif;
-  font-weight: 800;
-  letter-spacing: -0.0225rem;
-}
-
-.dayDate {
-  color: black;
-  font-size: 1.1rem;
-  font-family: "Inter", sans-serif;
-  letter-spacing: 0.0125rem;
-  font-weight: 600;
-  align-self: flex-end;
-  margin-right: 0.4rem;
-}
-
 h1 {
   color: black;
   font-size: 3rem;
@@ -95,12 +51,66 @@ h3 {
   letter-spacing: 0.0025rem;
 }
 
-#addBooks {
+.copyRights {
+  color: black;
+  font-size: 1.1rem;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.0125rem;
+  display: block;
+  border: 1.5px solid #595959;
+  padding: 0.5rem;
+  margin: 0.3rem;
+}
+
+.copyRights a {
+  color: blue;
+}
+
+.navBar {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: space-between;
   align-items: center;
-  padding: 3rem;
+  margin: 0.3rem;
+  border: 2px solid #595959;
+  padding: 0.5rem;
+}
+
+.navBar h1 {
+  color: black;
+  font-size: 3rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.0525rem;
+  align-self: flex-start;
+  margin-left: 2.5rem;
+}
+
+.navBar div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 1.5rem;
+  gap: 1rem;
+}
+
+.navBar div a {
+  color: black;
+  font-size: 1.7rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.0225rem;
+}
+
+.dayDate {
+  color: black;
+  font-size: 1.1rem;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.0125rem;
+  font-weight: 600;
+  align-self: flex-end;
+  margin-right: 0.4rem;
 }
 
 #container {
@@ -115,6 +125,17 @@ h3 {
   border-radius: 5px;
   padding: 0.1rem;
   gap: 0.5rem;
+}
+
+#container h3 {
+  margin-top: 3rem;
+}
+
+#container ul li {
+  color: black;
+  font-size: 1.1rem;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.0125rem;
 }
 
 .bookForm {
@@ -203,39 +224,6 @@ input {
 .hline {
   border-bottom: 1px solid #595959;
   text-align: center;
-}
-
-#contactUs {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-  gap: 1rem;
-  padding: 2rem;
-}
-#contactUs h3 {
-  margin-top: 3rem;
-}
-#contactUs li {
-  color: black;
-  font-size: 1.1rem;
-  font-family: "Inter", sans-serif;
-  letter-spacing: 0.0125rem;
-}
-
-.copyRights {
-  color: black;
-  font-size: 1.1rem;
-  font-family: "Inter", sans-serif;
-  letter-spacing: 0.0125rem;
-  display: block;
-  border: 1.5px solid #595959;
-  padding: 0.5rem;
-  margin: 0.3rem;
-}
-.copyRights a {
-  color: blue;
 }
 
 .hide {

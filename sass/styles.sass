@@ -5,6 +5,26 @@ nav
     padding: .2rem
     gap: .2rem
     justify-content: center
+h1
+    @include smlInterH1
+    text-align: center
+    padding: 5rem
+    @include transparentText
+
+h2
+    @include smlInterH2
+    padding: .2rem
+h3
+    @include smlInterH3
+
+.copyRights
+    @include smlInterP
+    display: block
+    border: 1.5px solid $primaryColor
+    padding: .5rem
+    margin: .3rem
+    a
+        color: blue
 .navBar
     @include rowFlex
     gap: 2rem
@@ -30,23 +50,6 @@ nav
     font-weight: 600
     align-self: flex-end
     margin-right: .4rem
-h1
-    @include smlInterH1
-    text-align: center
-    padding: 5rem
-    @include transparentText
-
-h2
-    @include smlInterH2
-    padding: .2rem
-h3
-    @include smlInterH3
-
-#addBooks
-    @include columnFlex
-    justify-content: center
-    align-items: center
-    padding: 3rem
 #container
     @include columnFlex
     align-self: center
@@ -58,6 +61,11 @@ h3
     border-radius: 5px
     padding: .1rem
     gap: .5rem
+    h3
+        margin-top: 3rem
+    ul
+        li
+            @include smlInterP
 .bookForm
     margin-top: 1rem
     @include columnFlex
@@ -103,28 +111,6 @@ input
 .hline
     border-bottom: 1px solid $primaryColor
     text-align: center
-
-// contact section
-
-#contactUs
-    @include columnFlex
-    justify-content: center
-    align-items: center
-    text-align: left
-    gap: 1rem
-    padding: 2rem
-    h3
-        margin-top: 3rem
-    li
-        @include smlInterP
-.copyRights
-    @include smlInterP
-    display: block
-    border: 1.5px solid $primaryColor
-    padding: .5rem
-    margin: .3rem
-    a
-        color: blue
 
 .hide
     display: none !important
