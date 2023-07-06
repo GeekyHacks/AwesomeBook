@@ -43,7 +43,7 @@ const displayBooks = (container) => {
 
 // Single page app
 
-function displayDate() {
+let displayDate = () => {
   const stringDate = new Date();
   const date = stringDate.toLocaleDateString('en-us', {
     year: 'numeric',
@@ -53,25 +53,18 @@ function displayDate() {
   const time = stringDate.toLocaleTimeString();
   dateLine.innerHTML = `${date} ${time}`;
   navBar.appendChild(dateLine);
-}
+};
 
 // to update the time
 setInterval(displayDate, 1000);
 
 // List page
-function listpage() {
-  container.classList.remove('hide');
-  // contactPage.classList.add('hide');
-  // addBookSection.classList.add('hide');
-
+let listpage = () => {
   return displayBooks(container);
-}
+};
 
 // addnew page
-function addBook() {
-  // addBookSection.classList.remove('hide');
-  // contactPage.classList.add('hide');
-  // container.classList.add('hide');
+let addBook = () => {
   container.innerHTML = `
   <h2 class="hline">Add New Book</h2>
    
@@ -125,14 +118,11 @@ function addBook() {
     authorInput.value = '';
     return event.preventDefault();
   });
-}
+};
 
 // contact page
 
-function contact() {
-  // contactPage.classList.remove('hide');
-  // container.classList.add('hide');
-  // addBookSection.classList.add('hide');
+let contact = () => {
   container.innerHTML = `<h2>Contact Information</h2>
   <h3>Reach out to us whenever you have any question or wanna say 'Hello!'</h3>
   <ul>
@@ -141,13 +131,12 @@ function contact() {
     <li>Adress:Zaid Street, Sana'a, Yemen</li>
   </ul>`;
   main.appendChild(container);
-}
+};
 
 // the following can be done for links click
 
 const links = document.querySelectorAll('.link'); /// create array of element objects
 links.forEach((link) => {
-  // loop through them
   link.addEventListener('click', function handleClick() {
     if (this.id === 'listBtn') {
       listpage();
@@ -161,3 +150,4 @@ links.forEach((link) => {
     return link;
   });
 });
+
