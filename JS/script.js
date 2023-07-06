@@ -2,8 +2,6 @@ const main = document.querySelector('main');
 const container = document.querySelector('#container');
 const dateLine = document.querySelector('.dayDate');
 const navBar = document.querySelector('nav');
-// const contactPage = document.querySelector('#contactUs');
-// const addBookSection = document.querySelector('#addBooks');
 let bookCollection = JSON.parse(localStorage.getItem('bookCollection')) || [];
 
 class Book {
