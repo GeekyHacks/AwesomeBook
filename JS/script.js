@@ -111,6 +111,7 @@ addBook = () => {
     localStorage.removeItem('formData');
     titleInput.value = '';
     authorInput.value = '';
+    addBook();
     return event.preventDefault();
   });
 };
