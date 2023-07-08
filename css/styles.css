@@ -11,6 +11,17 @@ a {
   color: #595959;
 }
 
+body {
+  background: #a5a5a5;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 nav {
   display: flex;
   flex-direction: column;
@@ -145,6 +156,22 @@ h3 {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+}
+
+.pop-win {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  padding: 0.5rem;
+  background: #f2f2f2;
+  border-radius: 6px;
+}
+
+.msg-win {
+  align-self: center;
+  color: #595959;
 }
 
 input {

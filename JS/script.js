@@ -111,11 +111,24 @@ addBook = () => {
     localStorage.removeItem('formData');
     titleInput.value = '';
     authorInput.value = '';
+    showPopWin();
     addBook();
     return event.preventDefault();
   });
 };
 
+const showPopWin = () => {
+  const popWin = document.createElement('div');
+  popWin.className = 'pop-win';
+  main.appendChild(popWin);
+
+  popWin.innerHTML = `
+    <div class="msg-win">
+      <h3>New book successfully added</h3>
+    </div>
+    `;
+  setTimeout(() => popWin.remove(), 2000);
+};
 // contact page
 
 contact = () => {
