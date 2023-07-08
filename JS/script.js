@@ -2,8 +2,6 @@ const main = document.querySelector('main');
 const container = document.querySelector('#container');
 const dateLine = document.querySelector('.dayDate');
 const navBar = document.querySelector('nav');
-// const contactPage = document.querySelector('#contactUs');
-// const addBookSection = document.querySelector('#addBooks');
 let bookCollection = JSON.parse(localStorage.getItem('bookCollection')) || [];
 
 class Book {
@@ -24,7 +22,7 @@ class Book {
   }
 }
 
-const displayBooks = (container) => {
+displayBooks = (container) => {
   container.innerHTML = '';
   bookCollection.forEach((book) => {
     const newBook = document.createElement('div');
@@ -43,7 +41,7 @@ const displayBooks = (container) => {
 
 // Single page app
 
-function displayDate() {
+displayDate = () => {
   const stringDate = new Date();
   const date = stringDate.toLocaleDateString('en-us', {
     year: 'numeric',
@@ -53,25 +51,15 @@ function displayDate() {
   const time = stringDate.toLocaleTimeString();
   dateLine.innerHTML = `${date} ${time}`;
   navBar.appendChild(dateLine);
-}
+};
 
 // to update the time
 setInterval(displayDate, 1000);
 
 // List page
-function listpage() {
-  container.classList.remove('hide');
-  // contactPage.classList.add('hide');
-  // addBookSection.classList.add('hide');
-
-  return displayBooks(container);
-}
-
+listpage = () => displayBooks(container);
 // addnew page
-function addBook() {
-  // addBookSection.classList.remove('hide');
-  // contactPage.classList.add('hide');
-  // container.classList.add('hide');
+addBook = () => {
   container.innerHTML = `
   <h2 class="hline">Add New Book</h2>
    
@@ -91,7 +79,7 @@ function addBook() {
   };
 
   // Declare the userinput as a data and match it with dataobject
-  const formUserInput = (data) => {
+  formUserInput = (data) => {
     titleInput.value = data.Title;
     authorInput.value = data.Author;
   };
@@ -123,16 +111,27 @@ function addBook() {
     localStorage.removeItem('formData');
     titleInput.value = '';
     authorInput.value = '';
+    showPopWin();
+    addBook();
     return event.preventDefault();
   });
-}
+};
 
+const showPopWin = () => {
+  const popWin = document.createElement('div');
+  popWin.className = 'pop-win';
+  main.appendChild(popWin);
+
+  popWin.innerHTML = `
+    <div class="msg-win">
+      <h3>New book successfully added</h3>
+    </div>
+    `;
+  setTimeout(() => popWin.remove(), 2000);
+};
 // contact page
 
-function contact() {
-  // contactPage.classList.remove('hide');
-  // container.classList.add('hide');
-  // addBookSection.classList.add('hide');
+contact = () => {
   container.innerHTML = `<h2>Contact Information</h2>
   <h3>Reach out to us whenever you have any question or wanna say 'Hello!'</h3>
   <ul>
@@ -141,13 +140,12 @@ function contact() {
     <li>Adress:Zaid Street, Sana'a, Yemen</li>
   </ul>`;
   main.appendChild(container);
-}
+};
 
 // the following can be done for links click
 
 const links = document.querySelectorAll('.link'); /// create array of element objects
 links.forEach((link) => {
-  // loop through them
   link.addEventListener('click', function handleClick() {
     if (this.id === 'listBtn') {
       listpage();

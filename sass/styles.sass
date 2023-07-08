@@ -1,5 +1,10 @@
 @import main
-
+body
+    background: #a5a5a5
+main
+    @include columnFlex
+    justify-content: center
+    align-items: center
 nav
     @include columnFlex
     padding: .2rem
@@ -53,10 +58,10 @@ h3
 #container
     @include columnFlex
     align-self: center
-    margin: 0.3rem
+    margin-bottom: 4rem
+    margin-top: .1rem
     justify-content: stretch
     align-items: center
-    margin-top: .1rem
     color: $primaryColor
     border-radius: 5px
     padding: .1rem
@@ -72,6 +77,19 @@ h3
     justify-content: center
     align-items: center
     gap: .5rem
+
+.pop-win
+    @include columnFlex
+    justify-content: center
+    align-items: center
+    margin: 1rem
+    padding: .5rem
+    background: #f2f2f2
+    border-radius: 6px
+
+.msg-win
+    align-self: center
+    color: $primaryColor
 
 input
     padding: 0.6rem
@@ -114,8 +132,9 @@ input
 
 .hide
     display: none !important
-footer
-    position: absolute
 
+footer
+    position: fixed
+    top: auto
     bottom: 0
     width: 100%
